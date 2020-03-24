@@ -1,0 +1,247 @@
+/*Styles for All pages*/
+
+body{  font-family: Arial, Helvetica, sans-serif; }
+img.logo{ width: 200px; }
+.active{ background-color: darkblue; }
+
+#main{
+  transition: margin-left .5s;
+  padding-left: 60px;
+  background-color: lightgray;
+}
+/* Menu bar */
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3A3AA1;
+}
+li a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover{  background-color: #4545D4 ; }
+
+/* Style for Side Navigation Bar */
+.sidenav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 1;
+  left: 1;
+  background-color: #3A3AA1;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidenav a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover{ background-color: #4545D4 ; }
+
+/*Styles for Close Button in Side Navigation*/
+.sidenav .closebtn{
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 30px;
+}
+.sidenav .closebtn:hover{
+  background-color: #3A3AA1;
+  font-size: 32px;
+  color: red;
+}
+/*Side Navigation Animation*/
+@media screen and (max-height: 450px)
+{
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 10px;}
+}
+/* Styles for Freelancers page*/
+
+/* The Modal (black background) for Freelancer Register box */
+.modal
+{
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden;  Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Style for Input box in Freelancer Register Box*/
+.modal input[type="text"],
+.modal input[type="email"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 2px solid #3A3AA1;
+  padding: 8px 6px;
+  width: 120px;
+  outline: none;
+  border-radius: 24px;
+  color: white;
+  transition: 0.25s;
+}
+.modal input[type="text"]:hover,
+.modal input[type="text"]:focus,
+.modal input[type="email"]:hover,
+.modal input[type="email"]:focus{
+  width: 140px;
+  border-color: white;
+}
+
+/* Style for Title inside the Freelancer Register Box */
+.modal h2{ font-weight: 500; color: white; transition:0.25s; padding: 10px;}
+.modal h2:hover{ color: #3A3AA1; }
+
+/* Style for buttons inside the FreeLancer Register box */
+.modal button{
+  outline: none;
+  background: none;
+  border: 2px solid green;
+  border-radius: 24px;
+  width: 70px;
+  padding: 5px 0px;
+  cursor: pointer;
+  transition: 0.25s;
+  color:gray;
+}
+.modal button:hover{ border-color: #3A3AA1; color: white; }
+
+/* FreeLancers Register Box */
+.regbox{
+  background-color: black;
+  border: 1px  #888;
+  position:relative;
+  top:80px;
+  width: 250px;
+  height:350px;
+  border-radius: 24px;
+}
+
+/* The Close Button in Freelancer Register box */
+.close
+{
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: gray;
+  font-size: 32px;
+  font-weight: bold;
+  transition: 0.25s;
+}
+.close:hover, .close:focus{ font-size: 35px; color: red; cursor: pointer; }
+
+/*Styles for Buttons in Freelancerpage*/
+button{
+  outline: none;
+  background-color: #3A3AA1;
+  padding: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+button:hover{ background-color: #4545D4; }
+
+/* Add Zoom Animation */
+.animate
+{
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom
+{
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom
+{
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px)
+{
+  span.psw
+  {
+    display: block;
+    float: none;
+  }
+  .cancelbtn
+  {
+    width: 20%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+h3.freelancername{ word-break: break-all; text-align: center; background-color: lightgray; padding: 5px;}
+/*table{ word-break: break-all;}*/
+.row {
+  margin: 8px;
+}
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.lancers {
+  background-color: white;
+  padding: 10px;
+  padding-color: lightgray;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
