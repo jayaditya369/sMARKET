@@ -5,15 +5,15 @@ session_start();
 <html>
 <head>
 	<title>Categories</title>
-	<link rel="stylesheet" href="homepage.css">
+	<link rel="stylesheet" href="addcoupon.css">
 </head>
 <body>
 	<a href="homepage.php"><img src="logo.png" alt="sMARKET" class="logo"></a>
 	<ul>
-		<li><a span style="font-size:13.5px;cursor:pointer;left:0" onclick="openNav()">&#9776;</span></a></li>
+		<li><a class="active" span style="font-size:13.5px;cursor:pointer;left:0" onclick="openNav()">&#9776;</span></a></li>
 		<li><a href="homepage.php" >HOME</a></li>
 		<li><a href="freelancer.php">FREELANCERS</a></li>
-		<li><a class="active" href="categories.php">CATEGORIES</a></li>
+		<li><a href="categories.php">CATEGORIES</a></li>
 		<li><a href="myaccount.php" style="float:right;">MY ACCOUNT</a></li>
 	</ul>
 	<div id="mySidenav" class="sidenav" >
@@ -28,6 +28,11 @@ session_start();
 			<?php
 					echo " Hello ".$_SESSION["user"].", Welcome<br>";
 			?>
+			<form action="createcoupon.php" method="post">
+				<input type="text" placeholder="Enter id" name="id">
+				<input type="text" placeholder="Enter Coupon" name="num">
+				<button type="submit">Create</button>
+			</form>
 			<br><br>
 	</div>
 	<script>

@@ -3,41 +3,48 @@
 if($_POST["psw"]==$_POST["psw1"] && $_POST["psw"]!="" && $_POST["uname"]!="")
 {
 	$con=mysqli_connect("localhost","root","");
-	if(!$con) 
+	if(!$con)
 	{
 		die('Error connecting to server :'.mysqli_error());
 	}
-	mysqli_select_db($con,"smarket");
+	mysqli_select_db($con,"kakaral_wp1");
 
 	$result=mysqli_query($con,"SELECT username FROM userdetails WHERE username='$_POST[uname]'");
-	
+
 	if(!mysqli_fetch_array($result,MYSQLI_ASSOC))
 	{
 		$sql="INSERT INTO userdetails(username, password) VALUES('$_POST[uname]','$_POST[psw]')";
-		
+
 		if(!mysqli_query($con,$sql))
 		{
-			die('Error :'.mysqli_error());
+			die('Error :'.mysqli_error($con));
 		}
-		echo "Registeration Successfull <br />";
-		header('Location: loginpage.html');
+
+		echo ("<SCRIPT LANGUAGE='JavaScript'>
+    window.alert(' Registeration Succesfull')
+    window.location.href='Loginpage.html';
+    </SCRIPT>");
 	}
 	else
 	{
-		echo "Username Already exists ! ";
-		echo "<a href='loginpage.html'> Go back to login page </a>";
+		echo ("<SCRIPT LANGUAGE='JavaScript'>
+    window.alert('Username Already Exists')
+    window.location.href='Loginpage.php';
+    </SCRIPT>");
 	}
-	
+
 	mysqli_close($con);
 }
 else
 {
 	if($_POST["psw"]!=$_POST["psw1"])
-		echo "Password mismatch <br />";
+	echo ("<SCRIPT LANGUAGE='JavaScript'>
+	window.alert(' Password Mismatch')
+	window.location.href='Loginpage.php';
+	</SCRIPT>");
 	else
 		echo "Invalid Username  <br />";
-	
-	echo "<a href='loginpage.html'> Go back to login page </a>";
+
 }
 /*
 1) We shouldnt allow similar usernames. (Y)
@@ -45,4 +52,3 @@ else
 3) We shouldnt allow null usernames and passwords.(Y)
 */
 ?>
-

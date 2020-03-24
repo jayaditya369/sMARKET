@@ -1,0 +1,191 @@
+/*Styles for All pages*/
+
+body{  font-family: Arial, Helvetica, sans-serif; }
+img.logo{ width: 200px; }
+.active{ background-color: darkblue; }
+
+#main{
+  transition: margin-left .5s;
+  padding-left: 60px;
+  background-color: lightgray;
+}
+/* Menu bar */
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3A3AA1;
+}
+li a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover{  background-color: #4545D4 ; }
+
+/* Style for Side Navigation Bar */
+.sidenav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 1;
+  left: 1;
+  background-color: #3A3AA1;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidenav a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover{ background-color: #4545D4 ; }
+
+/*Styles for Close Button in Side Navigation*/
+.sidenav .closebtn{
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 30px;
+}
+.sidenav .closebtn:hover{
+  background-color: #3A3AA1;
+  font-size: 32px;
+  color: red;
+}
+/*Side Navigation Animation*/
+@media screen and (max-height: 450px)
+{
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 10px;}
+}
+
+/* Styles for Homepage*/
+
+/* CODE ONLY FOR WRITEPOST TAB */
+.writepost{
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  right: 8px;
+  bottom: 10px;
+  z-index: 1; /* Sit on top */
+  width: 380px; /* Full width */
+  height: 300px; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: #5A5AE7; /* Fallback color */
+  padding-top: 1px;
+  border-radius: 24px;
+}
+/*Style for button*/
+.writepost button{
+  background: none;
+  color: white;
+  padding: 6px 1px;
+  border: 2px solid white;
+  cursor: pointer;
+  width: 60px;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.writepost button:hover{  width: 70px; }
+
+/*Style for close button in the Writepost tab*/
+.writepost .close1{
+  position: absolute;
+  top: 5px;
+  right: 9px;
+  font-size: 30px;
+  color:lightgray;
+  cursor: pointer;
+  /*margin-left: 10px;*/
+}
+.writepost .close1:hover{ color: red; font-size: 32px;}
+
+.writepost h3{
+   font-weight: 500;
+   color: white;
+   background-color: black;
+   border: 2px solid white;
+   border-radius: 24px;
+   width: 150px;
+   padding:5px;}
+
+/*Style for textboxes in writepost tab*/
+.writepost input[type="text"],
+.writepost textarea{
+  outline: none;
+  padding: 10px;
+  border-radius: 24px;
+  border: 2px solid #3A3AA1;
+  width: 250px;
+  transition: 0.25s;
+}
+.writepost input[type="text"]:hover,
+.writepost input[type="text"]:focus,
+.writepost textarea:hover,
+.writepost textarea:focus{ border-color: black; width: 290px; }
+
+#postname{ text-align: center; background-color: lightgray; padding: 5px;}
+/*table{ word-break: break-all;}*/
+.row {
+  margin: 8px;
+}
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 500px;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.posts {
+  background-color: white;
+  padding: 10px;
+  padding-color: lightgray;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/*Styles for Buttons*/
+button{
+  outline: none;
+  background-color: #3A3AA1;
+  padding: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+button:hover{ background-color: #4545D4; }

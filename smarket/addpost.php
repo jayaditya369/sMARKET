@@ -1,26 +1,37 @@
 <?php
 
 	session_start();
-	
+
 	$con=mysqli_connect("localhost","root","");
-	if(!$con) 
+	if(!$con)
 	{
 		die('Error connecting to server :'.mysqli_error());
 	}
-	mysqli_select_db($con,"smarket");
+	mysqli_select_db($con,"kakaral_wp1");
+		$n1=$_SESSION["n"];
 
-	
-		$sql= "INSERT INTO post(uname, type, work) VALUES('$_SESSION[user]','$_POST[skill]','$_POST[wpost]')";
-		
-		if(!mysqli_query($con,$sql))
+		if($n1>0)
 		{
-			die('Error :'.mysqli_error());
+			$sql= "INSERT INTO post(uname, type, work) VALUES('$_SESSION[user]','$_POST[skill]','$_POST[wpost]')";
+			$n1= $n1-1;
+			$_SESSION["n"] = $n1;
+			if(!mysqli_query($con,$sql))
+			{
+				die('Error :'.mysqli_error());
+			}
+			echo ("<SCRIPT LANGUAGE='JavaScript'>
+	    window.alert(' Post Published')
+	    window.location.href='homepage.php';
+	    </SCRIPT>");
 		}
-		echo " Added Successfully <br />";
-		header('Location: homepage.php');
-	
-	
-	mysqli_close($con);
+		else {
+			echo ("<SCRIPT LANGUAGE='JavaScript'>
+	    window.alert(' Sorry, Your Post didnt published. You need to Upgrade your Account')
+	    window.location.href='homepage.php';
+	    </SCRIPT>");
+		}
+
+			mysqli_close($con);
 
 
 /*
@@ -29,4 +40,3 @@
 3) We shouldnt allow null usernames and passwords.(Y)
 */
 ?>
-
