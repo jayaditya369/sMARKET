@@ -1,10 +1,9 @@
-
 <?php
 	ini_set( "display_errors", 0);
 
 	session_start();
 
-	$con=mysqli_connect("localhost","root","");
+	$con=mysqli_connect("localhost","kakaral","Harika@12345");
 
 	if(!$con)
 	{
@@ -18,15 +17,15 @@
 	if(!mysqli_fetch_array($result,MYSQLI_ASSOC))
 	{
 		echo ("<SCRIPT LANGUAGE='JavaScript'>
-    window.alert('Wrong Login, Go back & try again')
-    window.location.href='Loginpage.php';
-    </SCRIPT>");
+        window.alert('Wrong Login, Go back & try again')
+        window.location.href='index.php';
+        </SCRIPT>");
 	}
 	else
 	{
 		$_SESSION["access"]=1;
 		$_SESSION["user"]=$_POST[uname];
-		$_SESSION["n"]=1;
+		$_SESSION["n"]=2;
 		echo ("<SCRIPT LANGUAGE='JavaScript'>
     window.alert(' Login Succesfull')
     window.location.href='homepage.php';

@@ -2,7 +2,7 @@
 
 	session_start();
 
-	$con=mysqli_connect("localhost","root","");
+	$con=mysqli_connect("localhost","kakaral","Harika@12345");
 
 	if(!$con)
 	{
@@ -13,7 +13,11 @@
 	if(!mysqli_fetch_array($result,MYSQLI_ASSOC))
 	{
 		$sql="INSERT INTO freelancers(name, fullname, degree, skills, phone, email) VALUES('$_SESSION[user]', '$_POST[fname]', '$_POST[deg]','$_POST[skills]','$_POST[phone]', '$_POST[email]' )";
-
+		$_SESSION['fullname'] = $_POST['fname'];
+		$_SESSION['degree'] = $_POST['deg'];
+		$_SESSION['skills'] = $_POST['skills'];
+		$_SESSION['phone'] = $_POST['phone'];
+		$_SESSION['email'] = $_POST['email'];
 		if(!mysqli_query($con,$sql))
 		{
 			die('Error :'.mysqli_error($con));

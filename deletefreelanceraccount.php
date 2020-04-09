@@ -2,7 +2,7 @@
 
 	session_start();
 
-	$con=mysqli_connect("localhost","root","");
+	$con=mysqli_connect("localhost","kakaral","Harika@12345");
 
 	if(!$con)
 	{
@@ -13,7 +13,9 @@
 	if(mysqli_fetch_array($result,MYSQLI_ASSOC))
 	{
 		$a1=$_SESSION['user'];
-
+        
+        $sql2 = mysqli_query($con,"DELETE FROM hired WHERE name='$a1'");
+        
 		$sql1="DELETE FROM freelancers WHERE name='$a1'";
 		/*$sql="UPDATE freelancers SET name='$a2' fullname='$a3', degree='$a4', skills='$a5', phone='$a6', email='$a7' WHERE name='$a1'";*/
 

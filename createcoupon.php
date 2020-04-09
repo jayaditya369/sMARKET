@@ -2,7 +2,7 @@
 
 	session_start();
 
-	$con=mysqli_connect("localhost","root","");
+	$con=mysqli_connect("localhost","kakaral","Harika@12345");
 
 	if(!$con)
 	{

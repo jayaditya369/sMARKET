@@ -2,7 +2,7 @@
 
 if($_POST["psw"]==$_POST["psw1"] && $_POST["psw"]!="" && $_POST["uname"]!="")
 {
-	$con=mysqli_connect("localhost","root","");
+	$con=mysqli_connect("localhost","kakaral","Harika@12345");
 	if(!$con)
 	{
 		die('Error connecting to server :'.mysqli_error());
@@ -22,14 +22,14 @@ if($_POST["psw"]==$_POST["psw1"] && $_POST["psw"]!="" && $_POST["uname"]!="")
 
 		echo ("<SCRIPT LANGUAGE='JavaScript'>
     window.alert(' Registeration Succesfull')
-    window.location.href='Loginpage.html';
+    window.location.href='index.html';
     </SCRIPT>");
 	}
 	else
 	{
 		echo ("<SCRIPT LANGUAGE='JavaScript'>
     window.alert('Username Already Exists')
-    window.location.href='Loginpage.php';
+    window.location.href='index.html';
     </SCRIPT>");
 	}
 
@@ -40,15 +40,14 @@ else
 	if($_POST["psw"]!=$_POST["psw1"])
 	echo ("<SCRIPT LANGUAGE='JavaScript'>
 	window.alert(' Password Mismatch')
-	window.location.href='Loginpage.php';
+	window.location.href='index.html';
 	</SCRIPT>");
 	else
-		echo "Invalid Username  <br />";
+		echo ("<SCRIPT LANGUAGE='JavaScript'>
+	window.alert(' Invalid Username')
+	window.location.href='index.html';
+	</SCRIPT>");
 
 }
-/*
-1) We shouldnt allow similar usernames. (Y)
-2) make the go back to login page work. (Y)
-3) We shouldnt allow null usernames and passwords.(Y)
-*/
+
 ?>

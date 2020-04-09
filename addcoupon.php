@@ -21,7 +21,7 @@ session_start();
 		<a href="services.php">Services</a>
 		<a href="help.php">Help</a>
 		<a href="developers.php">Developers</a>
-		<a href="Loginpage.html">Logout</a>
+		<a href="index.html">Logout</a>
 	</div>
 	<div id="main">
 			<br>

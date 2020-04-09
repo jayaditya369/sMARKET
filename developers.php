@@ -10,7 +10,7 @@ session_start();
 <body>
 	<a href="homepage.php"><img src="logo.png" alt="sMARKET" class="logo"></a>
 	<ul>
-		<li><a class="active" span style="font-size:13.5px;cursor:pointer;left:0" onclick="openNav()">&#9776;</span></a></li>
+		<li><a class="active" span style="font-size:13.5px;cursor:pointer;left:0" onclick="toggleNav()">&#9776;</span></a></li>
 		<li><a href="homepage.php" >HOME</a></li>
 		<li><a href="freelancer.php">FREELANCERS</a></li>
 		<li><a href="categories.php">CATEGORIES</a></li>
@@ -21,7 +21,7 @@ session_start();
 		<a href="services.php">Services</a>
 		<a href="help.php">Help</a>
 		<a href="developers.php">Developers</a>
-		<a href="Loginpage.html">Logout</a>
+		<a href="logout.php">Logout</a>
 	</div>
 	<div id="main">
 			<br>
@@ -50,7 +50,7 @@ session_start();
 							<b>University of Windsor</b><br>
 							dave91@uwindsor.ca<br><br>
 
-							<button style="float:right">Contact</button>
+							<a href="https://www.linkedin.com/in/hardika-dave-715a5a187"><button style="float:right">Contact</button></a>
 							</center>
 							<br><br>
 					</div>
@@ -100,8 +100,16 @@ session_start();
 			document.getElementById("mySidenav").style.width = "0";
 			document.getElementById("main").style.marginLeft= "0";
 		}
-
-		var modal = document.getElementById('wp1');
+        function toggleNav() {
+            var element = document.getElementById("mySidenav");
+            if (element.style.width == "200px")
+		    {
+                closeNav();
+            } else
+		    {
+                openNav();
+            }
+		}
 
 	</script>
 </body>

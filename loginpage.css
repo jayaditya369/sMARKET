@@ -15,7 +15,7 @@ img.logo
 {
   display: none; /* Hidden by default */
   position: absolute; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -186,6 +186,7 @@ ul
 .collapsible
 {
   background-color: #3A3AA1;
+  position: relative;
   color: white;
   cursor: pointer;
   padding: 15px;
@@ -211,4 +212,9 @@ ul
   text-align: left;
   background-color: lightgray;
   padding-right: 10px;
+}
+
+.firstbox
+{
+    position: relative;
 }

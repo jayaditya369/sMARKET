@@ -9,7 +9,7 @@ session_start();
 <body>
 	<a href="homepage.php"><img src="logo.png" alt="sMARKET" class="logo"></a>
 	<ul>
-		<li><a span style="font-size:13.5px;cursor:pointer;left:0" onclick="openNav()">&#9776;</span></a></li>
+		<li><a span style="font-size:13.5px;cursor:pointer;left:0" onclick="toggleNav()">&#9776;</span></a></li>
 		<li><a href="homepage.php" >HOME</a></li>
 		<li><a class="active" href="freelancer.php">FREELANCERS</a></li>
 		<li><a href="categories.php">CATEGORIES</a></li>
@@ -20,7 +20,7 @@ session_start();
 		<a href="services.php">Services</a>
 		<a href="help.php">Help</a>
 		<a href="developers.php">Developers</a>
-		<a href="Loginpage.html">Logout</a>
+		<a href="logout.php">Logout</a>
 	</div>
 
 	<div id="main">
@@ -35,7 +35,7 @@ session_start();
 			<!-- Portfolio FreeLancers Grid -->
 			<div class="row">
 				<?php
-				$con=mysqli_connect("localhost","root","");
+				$con=mysqli_connect("localhost","kakaral","Harika@12345");
 				if(!$con)
 				{
 					die('Error connecting to server :'.mysqli_error());
@@ -71,8 +71,12 @@ session_start();
 															<td>'.$field6name.'</td>
 														</tr>
 														</table>
-
-														<button style="float:right">HIRE</button>
+                                                        <br>
+														<form method="post" action="hire.php">
+														    <input type="hidden" name="postname" value="'.$field1name.'">
+		    												<input type="hidden" name="postfullname" value="'.$field2name.'">
+																<button type="submit" style="float:right;">HIRE</button>
+														</form>
 														</center>
 														<br><br>
     										</div>
@@ -110,6 +114,16 @@ session_start();
 		{
 			document.getElementById("mySidenav").style.width = "0";
 			document.getElementById("main").style.marginLeft= "0";
+		}
+		function toggleNav() {
+            var element = document.getElementById("mySidenav");
+            if (element.style.width == "200px")
+		    {
+                closeNav();
+            } else
+		    {
+                openNav();
+            }
 		}
 	</script>
 </body>

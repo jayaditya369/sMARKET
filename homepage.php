@@ -13,7 +13,7 @@ session_start();
 
 	<img src="logo.png" alt="sMARKET" class="logo">
 	<ul>
-		<li><a span style="font-size:13.5px;cursor:pointer;left:0" onclick="openNav()">&#9776;</span></a></li>
+		<li><a span style="font-size:13.5px;cursor:pointer;left:0" onclick="toggleNav()">&#9776;</span></a></li>
 		<li><a class="active" href="homepage.php" >HOME</a></li>
 		<li><a href="freelancer.php">FREELANCERS</a></li>
 		<li><a href="categories.php">CATEGORIES</a></li>
@@ -26,7 +26,7 @@ session_start();
 		<a href="services.php">Services</a>
 		<a href="help.php">Help</a>
 		<a href="developers.php">Developers</a>
-		<a href="Loginpage.html">Logout</a>
+		<a href="logout.php">Logout</a>
 	</div>
 
 	<div id="main">
@@ -37,9 +37,9 @@ session_start();
 	<br>
 
 
-		<!-- Portfolio Gallery Grid -->
+		<!-- Posts Gallery Grid -->
 		<?php
-		$con=mysqli_connect("localhost","root","");
+		$con=mysqli_connect("localhost","kakaral","Harika@12345");
 		if(!$con)
 		{
 			die('Error connecting to server :'.mysqli_error());
@@ -50,6 +50,7 @@ session_start();
 		{
 				while ($row = $result->fetch_assoc())
 				{
+						$f1= $row["id"];
 						$field1name = $row["uname"];
 						$field2name = $row["type"];
 						$field3name = $row["work"];
@@ -69,9 +70,11 @@ session_start();
 													<td>'."$field3name".'</td>
 												</tr>
 												</table>
-												<button style="float:right;">RESPOND</button>
+												<form method="post" action="respond.php">
+    												<input type="hidden" name="postid" value="'.$f1.'">
+														<button type="submit" style="float:right;">RESPOND</button>
+												</form>
 												<br><br>
-
 										</div>
 								</div>
 						</div> ';
@@ -118,7 +121,18 @@ session_start();
 		{
 			document.getElementById("wp1").style.display="none";
 		}
-
+        function toggleNav()
+        {
+            var element = document.getElementById("mySidenav");
+            if(element.style.width=="200px")
+            {
+                closeNav();
+            }
+            else
+            {
+                openNav();
+            }
+        }
 
 	</script>
 </body>
