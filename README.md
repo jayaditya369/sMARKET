@@ -1,5 +1,6 @@
 # sMARKET
 A Digital Market Place for FreeLancers
+Site : http://smarket.kakaral.myweb.cs.uwindsor.ca/
 
 
 To Use this project
